@@ -1,10 +1,12 @@
 import { Router } from "express";
-import bodyValidate from "../common/body-validate.middleware";
 import authController from "./auth.controller";
-import registerScheme from "./auth.model";
+import { errorHandler } from "../common/error-handler";
 
 const router = Router()
 
 router.post('/register', authController.register)
+router.post('/login', authController.login)
+router.get('/verify', authController.verify)
+router.use(errorHandler)
 
 export default router
