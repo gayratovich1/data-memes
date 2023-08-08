@@ -8,12 +8,12 @@ datasource db {
 }
 
 model User {
-  id       Int     @id @default(autoincrement())
-  name     String?
-  surname  String?
-  nickname String  @unique
-  password String
-  verified Boolean @default(false)
+  id        Int         @id @default(autoincrement())
+  name      String?
+  surname   String?
+  nickname  String      @unique
+  password  String
+  verified  Boolean     @default(false) 
 }
 
 model Multipart {
