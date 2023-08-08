@@ -17,7 +17,10 @@ const createPost = async (req: Request, res: Response, next: NextFunction) => {
             image: file.path
         })
 
-        return post
+        res.status(201).send({
+            message: 'Post created',
+            post
+        })
     }
     catch (e) {
         next(e)
